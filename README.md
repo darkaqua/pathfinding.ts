@@ -1,5 +1,7 @@
 # pathfinding.ts
 
+`npm i pathfinding.ts`
+
 Finders:
 - [x] Jump Point - No Diagonal Movement
 
