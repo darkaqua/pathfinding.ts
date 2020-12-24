@@ -1,24 +1,23 @@
-import {Point} from "./point/point";
+import { Point } from './point/point';
 
 export class Node {
+  public readonly point: Point;
+  public cost: number;
 
-    public readonly point: Point;
-    public cost: number;
+  public g: number;
+  public f: number;
+  public h: number = 0;
 
-    public g: number;
-    public h: number;
-    public f: number
+  public opened: boolean = false;
+  public closed: boolean = false;
 
-    public opened: boolean;
-    public closed: boolean;
+  public parent?: Node = undefined;
 
-    public parent: Node;
+  constructor(point: Point, cost: number) {
+    this.point = point;
+    this.cost = cost;
 
-    constructor(point: Point, cost?: number) {
-        this.point = point;
-        this.cost = cost;
-
-        this.g = 0;
-        this.f = 0;
-    }
+    this.g = 0;
+    this.f = 0;
+  }
 }
