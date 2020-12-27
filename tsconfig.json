@@ -1,10 +1,22 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "target": "es2017",
-    "sourceMap": false
+    "target": "ES2015",
+    "lib": ["dom", "es2015", "es2016", "es2017", "es2018", "es2019", "es2020"],
+    "declaration": true,
+    "sourceMap": false,
+    "noImplicitAny": false,
+    "rootDir": "./src/",
+    "outDir": "./dist",
+    "strict": false,
+    "noUnusedLocals": false,
+    "allowJs": false,
+
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "dist",
+    "__tests__",
+    "babel.config.js"
   ]
 }
