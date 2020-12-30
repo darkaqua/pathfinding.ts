@@ -35,5 +35,4 @@ describe('test openList', () => {
         expect(() => list.pop()).toThrowError("Popping from an empty list.")
     })
 
-
 })
