@@ -27,7 +27,12 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.1.4
         with:
-          node-version: '14.x' 
+          node-version: '14.x'
+          
+      - name: npm install + @actions/core
+        run: | 
+          npm install
+          npm install @actions/core
           
       - name: Generate dotfile npmrc
         # You may pin to the exact commit or the version.
@@ -39,8 +44,7 @@ jobs:
           # name of repo
           name-repo: "pathfinding.ts"
           
-      - name: Install Dependencies, build and test
+      - name: build and publish
         run: | 
-          npm install
           npm run build
           npm publish
