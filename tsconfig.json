@@ -1,18 +1,23 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "target": "es2017",
+    "target": "ES2015",
+    "lib": ["dom", "es2015", "es2016", "es2017", "es2018", "es2019", "es2020"],
+    "declaration": true,
     "sourceMap": false,
-    // stricter type-checking for stronger correctness. Recommended by TS
+    "noImplicitAny": false,
+    "rootDir": "./src/",
+    "outDir": "./dist",
     "strict": true,
-    // significant perf increase by skipping checking .d.ts files, particularly those in node_modules. Recommended by TS
+    "noUnusedLocals": false,
+    "allowJs": false,
     "skipLibCheck": true,
-    // error out if import and file system have a casing mismatch. Recommended by TS
-    "forceConsistentCasingInFileNames": true,
-    // output .d.ts declaration files for consumers
-    "declaration": true
+    "forceConsistentCasingInFileNames": true
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "dist",
+    "__tests__",
+    "babel.config.js"
   ]
 }

@@ -1,3 +1,6 @@
+src/**/*.js
+__tests__/**/*.js
+
 # Logs
 logs
 *.log

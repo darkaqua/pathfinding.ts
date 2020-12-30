@@ -1,18 +1,18 @@
 {
   "name": "pathfinding.ts",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
-    "dist",
-    "src"
+    "/dist"
   ],
   "repository": "https://github.com/darkaqua/pathfinding.ts",
   "scripts": {
     "start": "./node_modules/.bin/ts-node ./src/index.ts",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "build": "./node_modules/.bin/tsc"
   },
   "keywords": [
     "pathfinding",
