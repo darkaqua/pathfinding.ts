@@ -8,10 +8,11 @@
     "noImplicitAny": false,
     "rootDir": "./src/",
     "outDir": "./dist",
-    "strict": false,
+    "strict": true,
     "noUnusedLocals": false,
     "allowJs": false,
-
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
   },
   "exclude": [
     "node_modules",
