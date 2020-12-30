@@ -68,6 +68,30 @@ describe('test path finding', () => {
                 { x: 4, y: 4 },
             ],
         },
+        {
+            grid: grid_A,
+            startPoint: { x: 4, y: 3 },
+            endPoint: { x: 0, y: 1 },
+            maxJumpCost: 5,
+            path: [
+                { x: 4, y: 3 },
+                { x: 4, y: 4 },
+                { x: 0, y: 4 },
+                { x: 0, y: 1 },
+            ],
+        },
+        {
+            grid: grid_A,
+            startPoint: { x: 0, y: 1 },
+            endPoint: { x: 4, y: 3 },
+            maxJumpCost: 5,
+            path: [
+                { x: 0, y: 1 },
+                { x: 0, y: 4 },
+                { x: 4, y: 4 },
+                { x: 4, y: 3 },
+            ],
+        },
     ] as {
         grid: Grid;
         startPoint: PointInterface;
@@ -83,7 +107,7 @@ describe('test path finding', () => {
         path: expectedPath,
         grid
     }) => {
-        it(`validates pathfinding for jumpCost  ${maxJumpCost}`, () => {
+        it(`validates pathfinding from ${Object.values(startPoint)} to ${Object.values(endPoint)} with jumpCost  ${maxJumpCost}`, () => {
             const path = grid.findPath(startPoint, endPoint, maxJumpCost);
             expect(path).toEqual(expectedPath);
         });
