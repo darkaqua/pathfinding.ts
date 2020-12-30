@@ -31,7 +31,7 @@ jobs:
         with:
           node-version: '14.x' 
           
-      - name: Install Dependencies, build and test
+      - name: install, test and build
         run: | 
           npm install
           npm test
