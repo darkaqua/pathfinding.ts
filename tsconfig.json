@@ -2,7 +2,15 @@
   "compilerOptions": {
     "module": "commonjs",
     "target": "es2017",
-    "sourceMap": false
+    "sourceMap": false,
+    // stricter type-checking for stronger correctness. Recommended by TS
+    "strict": true,
+    // significant perf increase by skipping checking .d.ts files, particularly those in node_modules. Recommended by TS
+    "skipLibCheck": true,
+    // error out if import and file system have a casing mismatch. Recommended by TS
+    "forceConsistentCasingInFileNames": true,
+    // output .d.ts declaration files for consumers
+    "declaration": true
   },
   "exclude": [
     "node_modules"

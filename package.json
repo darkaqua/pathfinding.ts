@@ -2,7 +2,12 @@
   "name": "pathfinding.ts",
   "version": "1.0.4",
   "description": "",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
   "repository": "https://github.com/darkaqua/pathfinding.ts",
   "scripts": {
     "start": "./node_modules/.bin/ts-node ./src/index.ts",
