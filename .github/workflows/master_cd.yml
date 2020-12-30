@@ -1,0 +1,46 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CD
+
+# Controls when the action will run. 
+on:
+  release:
+    types: # This configuration does not affect the page_build event above
+      - created
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.1.4
+        with:
+          node-version: '14.x' 
+          
+      - name: Generate dotfile npmrc
+        # You may pin to the exact commit or the version.
+        # uses: nqhy/generatenpmrc@7d11a234202951869d23524a47a1f70ad5cb07a1
+        uses: nqhy/generatenpmrc@v1.2
+        with:
+          # npmrc token key
+          token: ${{ secrets.NPMRC_TOKEN }}
+          # name of repo
+          name-repo: "pathfinding.ts"
+          
+      - name: Install Dependencies, build and test
+        run: | 
+          npm install
+          npm run build
+          npm publish
