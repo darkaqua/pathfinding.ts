@@ -37,7 +37,7 @@ jobs:
         uses: nqhy/generatenpmrc@v1.2
         with:
           # npmrc token key
-          token: ${{NPMRC_TOKEN}}
+          token: ${{ secrets.NPMRC_TOKEN }}
           # name of repo
           name-repo: "pathfinding.ts"
           
