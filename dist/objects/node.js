@@ -5,8 +5,8 @@ class Node {
     constructor(point, cost) {
         this.point = point;
         this.cost = cost;
-        this.g = 0;
-        this.f = 0;
+        this.distanceFromStart = 0;
+        this.totalCost = 0;
     }
 }
 exports.Node = Node;
