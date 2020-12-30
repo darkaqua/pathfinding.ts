@@ -31,19 +31,8 @@ jobs:
         with:
           node-version: '14.x' 
           
-      - name: Generate dotfile npmrc
-        # You may pin to the exact commit or the version.
-        # uses: nqhy/generatenpmrc@7d11a234202951869d23524a47a1f70ad5cb07a1
-        uses: nqhy/generatenpmrc@v1.2
-        with:
-          # npmrc token key
-          token: ${{ secrets.NPMRC_TOKEN }}
-          # name of repo
-          name-repo: "pathfinding.ts"
-          
       - name: Install Dependencies, build and test
         run: | 
           npm install
           npm test
           npm run build
-          npm publish
