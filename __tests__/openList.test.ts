@@ -32,7 +32,7 @@ describe('test openList', () => {
     })
 
     it("errors when popping from empty list", () => {
-        expect(() => list.pop()).toThrowError(ReferenceError)
+        expect(() => list.pop()).toThrowError("popping from an empty list")
     })
 
 })
