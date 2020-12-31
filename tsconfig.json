@@ -23,6 +23,7 @@
     "dist",
     "__tests__",
     "babel.config.js",
-    "src/sandbox.ts"
+    "src/sandbox.ts",
+    "__tests__/**/*.ts"
   ]
 }
