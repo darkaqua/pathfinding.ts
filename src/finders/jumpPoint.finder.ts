@@ -81,11 +81,41 @@ export const findPath = (
             }
             const distance = HeuristicUtils.Octile(absoluteJumpPoint.x, absoluteJumpPoint.y);
 
+            const distanceJump = {
+                x: Array.from({ length: absoluteJumpPoint.x + 1 }, (x, i) => nodePoint.x + i)
+                    .map(nodeX => grid.getNode(new Point(nodeX, nodePoint.y)) as Node)
+                    .filter(node => node !== null),
+                y: Array.from({ length: absoluteJumpPoint.y + 1 }, (y, i) => nodePoint.y + i)
+                    .map(nodeY => grid.getNode(new Point(nodePoint.x, nodeY)) as Node)
+                    .filter(node => node !== null),
+            }
+
+            const maxXCost = distanceJump.x
+                .reduce((maxCost, node, index) => {
+                    if(index === 0)
+                        return node.cost;
+                    const currentCost = Math.abs(distanceJump.x[index - 1].cost - node.cost);
+                    return currentCost > maxCost ? currentCost : maxCost;
+                }, 0);
+            const maxYCost = distanceJump.y
+                .reduce((maxCost, node, index) => {
+                    if(index === 0)
+                        return node.cost;
+                    const currentCost = Math.abs(distanceJump.y[index - 1].cost - node.cost);
+                    return currentCost > maxCost ? currentCost : maxCost;
+                }, 0);
+
             // to expensive to jump
             const currentJumpCost = Math.abs(node.cost - jumpNode.cost);
+
             const jumpAverageCost = currentJumpCost / distance;
+
+            console.log(nodePoint, jumpNodePoint, maxXCost, maxYCost);
+            // console.log(distanceJump)
+            // if(maxXCost > maxJumpCost || maxYCost > maxJumpCost)
             if(jumpAverageCost > maxJumpCost)
                 return;
+
 
             const estimatedDistance = (node.distanceFromStart + distance) * neighbor.cost;
 

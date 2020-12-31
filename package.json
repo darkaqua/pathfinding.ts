@@ -9,7 +9,8 @@
   ],
   "repository": "https://github.com/darkaqua/pathfinding.ts",
   "scripts": {
-    "start": "./node_modules/.bin/ts-node ./src/index.ts",
+    "start": "./node_modules/.bin/ts-node ./src/sandbox.ts",
+    "start:nodemon": "nodemon",
     "test": "jest",
     "test:watch": "jest --watch",
     "build": "./node_modules/.bin/tsc"
