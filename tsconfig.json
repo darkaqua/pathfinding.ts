@@ -6,18 +6,23 @@
     "declaration": true,
     "sourceMap": false,
     "noImplicitAny": false,
-    "rootDir": "./src/",
-    "outDir": "./dist",
+    "rootDir": "src",
+    "outDir": "dist",
     "strict": true,
     "noUnusedLocals": false,
     "allowJs": false,
     "skipLibCheck": true,
+    "resolveJsonModule": false,
     "forceConsistentCasingInFileNames": true
   },
+  "include": [
+    "src/"
+  ],
   "exclude": [
     "node_modules",
     "dist",
     "__tests__",
-    "babel.config.js"
+    "babel.config.js",
+    "src/sandbox.ts"
   ]
 }
