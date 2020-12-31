@@ -1,7 +1,7 @@
 import { Graph } from '../src/objects/graph';
 
-import {smallGrid, testCasesSmallGrid} from "../__test-data__/small-grid";
-import {testCasesBigGrid} from "../__test-data__/big-grid";
+import {smallGrid, testCasesSmallGrid} from "./test-data/small-grid";
+import {testCasesBigGrid} from "./test-data/big-grid";
 
 describe('test minimumJumpBFS', () => {
     const testCases = [

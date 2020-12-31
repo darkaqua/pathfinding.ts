@@ -28,19 +28,19 @@ const grid_B = [
 ]
 
 export const testCasesBigGrid = [
-{
-    grid: grid_B,
-    startPoint: { x: 15, y: 20 },
-    endPoint: { x: 13, y: 20 },
-    maxJumpCost: 4,
-    path: [
-        { x: 15, y: 20 },
-        { x: 15, y: 11 },
-        { x: 10, y: 11 },
-        { x: 10, y: 20 },
-        { x: 13, y: 20 },
-    ],
-},
+// {
+//     grid: grid_B,
+//     startPoint: { x: 15, y: 20 },
+//     endPoint: { x: 13, y: 20 },
+//     maxJumpCost: 4,
+//     path: [
+//         { x: 15, y: 20 },
+//         { x: 15, y: 11 },
+//         { x: 10, y: 11 },
+//         { x: 10, y: 20 },
+//         { x: 13, y: 20 },
+//     ],
+// },
     {
         grid: grid_B,
         startPoint: { x: 13, y: 20 },

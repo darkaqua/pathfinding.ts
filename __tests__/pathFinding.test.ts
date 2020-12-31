@@ -1,6 +1,6 @@
 import { Grid } from '../src';
 
-import {smallGrid, testCasesSmallGrid} from "../__test-data__/small-grid";
+import {smallGrid, testCasesSmallGrid} from "./test-data/small-grid";
 
 describe('test path finding', () => {
     const testCases = [
