@@ -1,8 +1,11 @@
-import { Grid } from '../src';
+import {FinderEnum, Grid} from '../src';
 
+// @ts-ignore
 import {smallGrid, testCasesSmallGrid} from "./test-data/small-grid";
+// @ts-ignore
+import {testCasesBigGrid} from "./test-data/big-grid";
 
-describe('test path finding', () => {
+describe('test JPS v1', () => {
     const testCases = [
         ...testCasesSmallGrid
     ];
@@ -14,9 +17,9 @@ describe('test path finding', () => {
         path: expectedPath,
         grid
     }) => {
-        it(`validates pathfinding from ${Object.values(startPoint)} to ${Object.values(endPoint)} with jumpCost  ${maxJumpCost}`, () => {
-            const testGrid = new Grid(grid)
-            const path = testGrid.findPath(startPoint, endPoint, maxJumpCost);
+        it(`validates pathfinding from {${Object.values(startPoint)}} to {${Object.values(endPoint)}} with jumpCost {${maxJumpCost}}`, () => {
+            const testGrid = new Grid(grid, 'node')
+            const path = testGrid.findPath(startPoint, endPoint, maxJumpCost, FinderEnum.JUMP_POINT);
             expect(path).toEqual(expectedPath);
         });
     });
