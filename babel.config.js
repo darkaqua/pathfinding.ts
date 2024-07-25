@@ -1,16 +1,14 @@
 module.exports = {
-    presets: [
-        [
-            '@babel/env',
-            {
-                targets: {
-                    node: 'current'
-                }
-            }
-        ],
-        '@babel/typescript'
+  presets: [
+    [
+      "@babel/env",
+      {
+        targets: {
+          node: "current",
+        },
+      },
     ],
-    plugins: [
-        ["@babel/plugin-transform-typescript", { "allowNamespaces": true }]
-    ]
+    "@babel/typescript",
+  ],
+  plugins: [["@babel/plugin-transform-typescript", { allowNamespaces: true }]],
 };

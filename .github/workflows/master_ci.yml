@@ -2,13 +2,13 @@
 
 name: CI
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -29,10 +29,11 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.1.4
         with:
-          node-version: '14.x' 
-          
+          node-version: "14.x"
+
       - name: install, test and build
-        run: | 
-          npm install
-          npm test
-          npm run build
+        run: |
+          yarn install
+          yarn test
+          yarn prettier:check
+          yarn run build
